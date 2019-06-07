@@ -1,0 +1,18 @@
+<h2 class="title">Medical Reports</h2>
+<div >
+    <mat-card *ngFor="let mr of medicalRecords" class="cnt-record" matRipple [routerLink]="['/medicalReports', mr.id]">
+        <div class="ref-avatar">{{mr.name |slice:0:1}}</div>
+        <div class="left-info">
+                <div><strong>Name:</strong> {{mr.name}}</div>
+                <div><strong>Owner:</strong> {{mr.user.name}}</div>
+        </div>                
+        <div class="right-info">
+            <div><strong>Type:</strong>{{mr.pet_type.name }}</div>
+            <div><strong>Size:</strong>{{mr.pet_size.name }}</div>
+        </div> 
+    </mat-card>
+</div>
+
+<button class="floating-button" mat-fab [routerLink]="['/purchase', id, 'create']">
+    <mat-icon aria-label="icon button" svgIcon="add-gray"></mat-icon>
+</button>
